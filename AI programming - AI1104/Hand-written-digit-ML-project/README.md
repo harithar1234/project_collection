@@ -1,7 +1,10 @@
 Training
 ========
 Train the following CNN for image classification. Randomly initialize your network.\
-• Input image of size 28 × 28 (images from the MNIST dataset).\
+• Input image of size 28 × 28 (images from the MNIST dataset).
+Each image is 28 pixels in height and 28 pixels in width, for a total of 784 pixels in total. Each pixel has a single pixel-value associated with it, indicating the lightness or darkness of that pixel, with higher numbers meaning lighter. This pixel-value is an integer between 0 and 255, inclusive.\
+![image](https://user-images.githubusercontent.com/86344120/177970898-6b79c84b-ea0c-4cde-b210-42e391b9854d.png)
+
 • Convolution layer with 4 kernels of size 5 × 5, ReLU activation, and stride of 1. Ensure that each activation channel
 output from this conv layer has the same width and height as its input.\
 • Max pooling layer of size 2 × 2 with a stride of 2 along each dimension.\
