@@ -1,16 +1,27 @@
-#Is the driver at fault?
-Kaggle Challenge link :https://www.kaggle.com/t/53d1fd0d4cc8422bbdf9de2ea61f7e81
+#Training
+Train the following CNN for image classification. Randomly initialize your network.
+• Input image of size 28 × 28 (images from the MNIST dataset).
+• Convolution layer with 4 kernels of size 5 × 5, ReLU activation, and stride of 1. Ensure that each activation channel
+output from this conv layer has the same width and height as its input.
+• Max pooling layer of size 2 × 2 with a stride of 2 along each dimension.
+• Convolution layer with 4 kernels of size 5 × 5 × 4, ReLU activation and stride of 1. As before, ensure that the input and
+output width and height match.
+• Max pooling layer of size 2 × 2 with a stride of 2 along each dimension.
+• This network has a flattening layer that is an identity matrix i.e., it simply passes the unravelled vector forward. Note
+that there is no need to learn the parameters of this layer.
+• An MLP with one hidden layer that accepts as input the flattening layer output maps it to a hidden layer with 49 nodes
+and then onto 10 output nodes. Use ReLU activation for the MLP. The output of the MLP is normalized using the softmax
+function
+• Use cross-entropy loss to find the error at the softmax output layer. Note that the ground-truth labels are one-hot encoded
+vectors of 10 dimensions.
 
-Data Description
-==== ===========
-Driver Accident Dataset is a dataset we procured from a government agency. We have modified the dataset to suit the objectives of this hackathon. In this binary classification problem, you will predict whether the driver involved in the accident is at fault or not. Input data has 42 features that include driver details, vehicle details, environment details, jurisdiction details and more. You may want to explore the data thoroughly to understand the columns and their levels before proceeding to build the model. When in doubt about a column or its values and its influence on the final prediction, use your best judgment based on the instructions from the class and your own judgment.
-
-Files
-=====
-train.csv - the training set with labels
-test.csv - the test set without labels
-sample_submission.csv - a sample submission file in the correct format
-
-Columns
-=======
-There are 42 columns in total. Most of them are categorical.
+#Back Propagation
+• Implement the back propagation algorithm for computing gradients.
+Update the weights of the network using the following variants of SGD.
+(a) Vanilla SGD. Use learning rate η = 0.001. (5)
+(b) Momentum. Use η = 0.001, α = 0.9. (5)
+(c) RMSProp. Use η = 0.001, ρ = 0.9. (5)
+For training, choose 100 images per class from the training set i.e., use 1000 images for training. 
+• Shuffle the training data after one epoch i.e., after all the training data points have been passed through the network once. Go
+back to the previous step. Do this for 20 epochs. You can experiment with the number of epochs as well.
+• After each epoch compute the error on the training data set. 
